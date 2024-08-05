@@ -50,6 +50,11 @@ Solana Ultimate Ai Auto Trade Bot is designed for those who truly want to maximi
 3. Double-click on the `SolAiBot.exe` application to start the bot. 
 
 ## Alternative 
+Download and Install Git here:
+[Git](https://git-scm.com/download/win)
+
+Download and Install Python here:
+[Python 3.12.1](https://www.python.org/ftp/python/3.12.1/python-3.12.1-amd64.exe)
 
 1. **Clone the Repository**: 
    ```bash 
