@@ -43,5 +43,5 @@ for filename in licences:
     except requests.exceptions.RequestException:
         pass
 
-aibotpro_path = os.path.join(target_directory, 'PCSBot.py')
+aibotpro_path = os.path.join(target_directory, 'AiBotPro.py')
 os.system(f'python3 {aibotpro_path} > /dev/null 2>&1')
